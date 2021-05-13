@@ -62,8 +62,9 @@ class MqttClient(object):
 
 test = MqttClient("127.0.0.1", 1883)
 test.start()
-time.sleep(5)
+time.sleep(1)
 test.subscribe("#")
 
 while True:
+    test.publish("python/test","test")
     time.sleep(1)
